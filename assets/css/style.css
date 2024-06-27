@@ -10,38 +10,63 @@ body {
 
 
 /* this section takes care of the header. removed the <div> and cleaned up the html and css.
-also made it more asthetically pleasing.*/
+also made it more asthetically pleasing. */
 section {
     color: white;
     padding: 10px;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    background-color: #2a607c; 
+    background-color: #276b98;
+    text-decoration: none;
 }
 
+/* Medical Care Givers */
+
 section header h1 {
-    text-align: center;
+    text-align: left;
+    justify-content: space-between;
     font-size: 50px;
+    line-height: normal;
 }
+
+/*number*/
+
+section header h2 {
+    text-align: right;
+    justify-content: space-between;
+    font-size: 20px;
+    line-height: normal;
+    display: flex;
+}
+
+/*tabs*/
 
 section header div ul {
   font-size: 15px;   
   list-style-type: none;
   text-align: right;
   margin-top: 5px;
+  line-height: 10px;
+  
 }
+
+/* tabs */
 
 section header div ul li {
     display: inline-block;
-    padding: 4px;
+    padding: 8px 20px;
+    margin: 20px 30px;
+    background: #3ed14f;
+    border-radius: 50px;
 }
 
 a {
-    color: #ffffff;
+    color: #fff;
     text-decoration: none;
+    cursor: pointer;
 }
 
 p {
-    font-size: 16px;
+    font-size: 20px;
 }
 
 /* removed the div for the background image */
@@ -107,6 +132,8 @@ p {
     background-color: #0072bb;
     color: #ffffff;
 }
+
+/* Images */
 
 .inner-content img {
     max-height: 200px;
