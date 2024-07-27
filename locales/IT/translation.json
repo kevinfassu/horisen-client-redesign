@@ -1,0 +1,37 @@
+{
+    "header": {
+        "title": "Assistenti Medici LLC",
+        "why_us": "Perché noi",
+        "services": "Servizi",
+        "employment": "Impiego",
+        "request_free_consultation": "RICHIEDI CONSULENZA GRATUITA"
+    },
+    "main": {
+        "autobiography": "Autobiografia",
+        "autobiography_content": "Greg A. Adams è il presidente e amministratore delegato di Kaiser Foundation Health Plan and Hospitals, che include assistenza e copertura integrate con il marchio Kaiser Permanente, la KP Medical Foundation e Risant Health e le sue sussidiarie.",
+        "seo": {
+            "title": "Ottimizzazione per i Motori di Ricerca",
+            "content": "Il dominio dell'uso di internet mobile significa che gli utenti stanno cercando l'azienda giusta mentre viaggiano, fanno acquisti o si siedono sul loro divano a casa. L'ottimizzazione per i motori di ricerca (SEO) consente di aumentare la visibilità e trovare i clienti giusti per la tua azienda."
+        },
+        "orm": {
+            "title": "Gestione della Reputazione Online",
+            "content": "Il web è pieno di opinioni, e alcune di queste possono essere negative. I social media consentono a chiunque abbia una connessione a internet di dire quello che vuole sulla tua azienda. La gestione della reputazione online ti dà il controllo su ciò che i potenziali clienti vedono quando cercano la tua azienda."
+        },
+        "smm": {
+            "title": "Marketing sui Social Media",
+            "content": "I social media continuano ad avere una notevole influenza sulle abitudini di acquisto. Il marketing sui social media ti aiuta a determinare quali piattaforme sono adatte al tuo marchio, utilizzando analisi per trovare i mercati giusti e aumentare la generazione di lead."
+        }
+    },
+    "contact_us": "Contattaci",
+    "full_name": "Nome Completo...",
+    "email_address": "Indirizzo Email...",
+    "phone_number": "XXX-XXX-XXXX",
+    "type_comment": "Scrivi il tuo Commento...",
+    "submit": "Invia",
+    "lead_generation": "Generazione di Lead",
+    "lead_generation_content": "Le strategie inbound per la generazione di lead richiedono meno lavoro per la tua azienda, portando i clienti direttamente al tuo sito web.",
+    "brand_awareness": "Consapevolezza del Marchio",
+    "brand_awareness_content": "Gli utenti trovano la tua azienda tramite ricerche a pagamento e organiche, aumentando il ranking di ricerca e la visibilità della tua azienda.",
+    "cost_management": "Gestione dei Costi",
+    "cost_management_content": "Man mano che aumenta il ranking di ricerca della tua azienda, diminuiscono i costi pubblicitari e non hai più bisogno di pubblicizzare la tua pagina."
+}
