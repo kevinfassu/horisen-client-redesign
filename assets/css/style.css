@@ -299,7 +299,7 @@ p {
   clear: both;
   float: right;
   width: 20%;
-  height: 78.8pc;
+  height: 103.7pc;
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   background-color: #798fae;
 }
@@ -327,7 +327,7 @@ p {
 .inner-content {
   margin-bottom: 20px;
   padding: 20px;
-  height: 300px;
+  height: 400px;
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   background-color: #0c3267;
   color: #ffffff;
@@ -338,7 +338,7 @@ p {
 }
 
 .inner-content p {
-  line-height: 1.2;
+  line-height: 1.5;
   margin-bottom: 80px;
 }
 
@@ -405,7 +405,7 @@ p {
   border-radius: 50px;
   color: #fff;
   cursor: pointer;
-  margin-top: 10px;
+  margin-top: 243px;
   box-sizing: border-box; /* Ensure padding is included in the width calculation */
   text-align: center; /* Center the text inside the button */
   transition: background-color 0.3s, color 0.3s; /* Smooth transition for hover effect */
