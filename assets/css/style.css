@@ -6,23 +6,29 @@
 
 body {
   background-color: #d9dcd6;
+  margin: 0;
+  padding: 0;
 }
 
 main {
-width: 50%;
+width: 100%;
+display: flex;
+justify-content: space-between;
+align-items: flex-start;
+padding: 20px;
 }
 
 /* this section takes care of the header. removed the <div> and cleaned up the html and css.
 also made it more aesthetically pleasing. */
 section {
-  color: rgb(255, 223, 141);
+  color: rgb(255, 187, 16);
   padding: 10px;
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   background-color: #0c3267;
   text-decoration: none;
   position: fixed;
   width: 100%;
-  height: 20%;
+  height: 16%;
 }
 
 .language-links {
@@ -56,7 +62,7 @@ section header h1 {
   justify-content: space-between;
   font-size: 50px;
   line-height: normal;
-  font-family: cursive;
+  font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
 /*number*/
@@ -101,20 +107,25 @@ p {
   font-size: 20px;
 }
 
+.text-container {
+  flex: 1; /* Allow it to take available space */
+  max-width: 40%; /* Adjust as needed */
+  padding-left: 20px; /* Space between text and slideshow */
+  padding-top: 20%;
+}
+
 /* Slideshow container */
 .slideshow-container {
-max-width: 1000px;
-position: static;
-right: 70px;
-margin: auto;
-padding-top: 12%;
-padding-bottom: 6%;
+max-width: 60%;
+flex: 1;
+padding-top: 150px;
+padding-right: 20px;
 }
 
 /* Next & previous buttons */
 .prev, .next {
 cursor: pointer;
-position: auto;
+position: static;
 top: 50%;
 width: auto;
 padding: 16px;
@@ -129,7 +140,7 @@ user-select: none;
 
 .prev {
 position: absolute;
-margin-top: 3%;
+margin-top: 2%;
 background-color: #0707078b;
 }
 
@@ -137,8 +148,8 @@ background-color: #0707078b;
 .next {
 border-radius: 3px 0 0 3px;
 position: absolute;
-right: 25%;
-margin-top: 3%;
+right: 44.1%;
+margin-top: 2%;
 background-color: #0707078b;
 }
 
@@ -167,7 +178,7 @@ position: absolute;
 top: 0;
 }
 
-/* The dots/bullets/indicators */
+/* The dots/bullets/indicators
 .dot {
 cursor: pointer;
 height: 15px;
@@ -178,7 +189,7 @@ border-radius: 50%;
 display: inline-block;
 transition: background-color 0.6s ease;
 }
-
+*/
 .active, .dot:hover {
 background-color: #717171;
 }
@@ -187,6 +198,52 @@ background-color: #717171;
 .fade {
 animation-name: fade;
 animation-duration: 0.5s;
+}
+
+.bi0 {
+  padding-left: 25%;
+  display: flex;
+  left: 30%
+}
+
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+.text-container {
+  text-align: center;
+  margin: 40px auto;
+  padding: 20px;
+  background-color: transparent; /* Light background */
+  color: #333; /* Dark text */
+  max-width: 800px;
+  border-radius: 0px;
+  box-shadow: none;
+  padding: 220px;
+}
+
+.text-container h2 {
+  font-size: 2.5em;
+  font-weight: bold;
+  color: #0c3267;
+  margin-bottom: 20px;
+}
+
+.text-container p {
+  font-size: 1.2em;
+  color: #666666;
+  line-height: 1.6;
+}
+
+.mySlides .text {
+  display: none;
+}
+
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
 }
 
 @keyframes fade {
@@ -240,7 +297,9 @@ to {opacity: 1}
 .benefit-section img {
   display: block;
   margin: 10px auto;
-  max-width: 150px;
+  max-width: 200px;
+  height: 250px;
+  width: 200px;
 }
 
 /* removed the repetitive css, made it into one.(left side) */
@@ -251,6 +310,11 @@ to {opacity: 1}
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   background-color: #0c3267;
   color: #ffffff;
+}
+
+.inner-content p {
+  line-height: 1.2;
+  margin-bottom: 80px;
 }
 
 #comment-section {
