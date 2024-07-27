@@ -1,3 +1,4 @@
+/* Global settings */
 * {
   box-sizing: border-box;
   padding: 0;
@@ -9,20 +10,20 @@ body {
 }
 
 main {
-width: 50%;
+  width: 50%;
 }
 
-/* this section takes care of the header. removed the <div> and cleaned up the html and css.
-also made it more aesthetically pleasing. */
+/* Header section */
 section {
-  color: rgb(255, 223, 141);
+  position: fixed;
+  z-index: 10;
+  color: #0c3267;
   padding: 10px;
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-  background-color: #0c3267;
+  background-color: #d9dcd6;
   text-decoration: none;
-  position: fixed;
   width: 100%;
-  height: 20%;
+  height: 15%;
 }
 
 .language-links {
@@ -33,7 +34,7 @@ section {
 }
 
 .language-link {
-  color: white;
+  color: #0c3267;
   text-decoration: none;
   margin: 0 5px;
 }
@@ -43,23 +44,24 @@ section {
 }
 
 .language-link img {
-  width: 16px;  /* Adjust the width as needed */
+  width: 16px; /* Adjust the width as needed */
   height: auto;
   margin-left: 5px;
   vertical-align: middle;
 }
 
-
 /* Medical Care Givers */
 section header h1 {
   text-align: center;
   justify-content: space-between;
-  font-size: 50px;
+  font-size: 36px;
   line-height: normal;
   font-family: cursive;
+  margin: 0;
+  padding: 0;
 }
 
-/*number*/
+/* Contact number */
 section header h2 {
   text-align: right;
   justify-content: space-between;
@@ -68,33 +70,40 @@ section header h2 {
   display: flex;
 }
 
-/*tabs*/
+/* Navigation tabs */
 section header div ul {
-font-size: 15px;   
-list-style-type: none;
-text-align: center;
-margin-top: 5px;
-line-height: 10px;
+  font-size: 15px;
+  list-style-type: none;
+  text-align: center;
+  margin-top: 0px;
+  line-height: 10px;
 }
 
-/* tabs */
+/* Navigation tabs items */
 section header div ul li {
   display: inline-block;
   padding: 8px 20px;
   margin: 20px 25px;
-  background: rgb(244, 209, 118);
+  background: white;
   border-radius: 50px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+
+
+a {
+  color: #0c3267;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+a:hover {
+  color: #0c3267;
 }
 
 section header div ul li:hover {
-  background-color: #6277bf;
-  color: #000;
-}
-
-a {
-  color: #fff;
-  text-decoration: none;
-  cursor: pointer;
+  background-color: gold;
+  color: #0c3267;
 }
 
 p {
@@ -103,100 +112,102 @@ p {
 
 /* Slideshow container */
 .slideshow-container {
-max-width: 1000px;
-position: static;
-right: 70px;
-margin: auto;
-padding-top: 12%;
-padding-bottom: 6%;
+  max-width: 1000px;
+  position: relative;
+  right: 70px;
+  margin: auto;
+  padding-top: 12%;
+  padding-bottom: 6%;
+  z-index: 1;
+  
+}
+
+.mySlides {
+  display: none;
+}
+
+.mySlides img {
+  width: 100%;
+  height: auto;
 }
 
 /* Next & previous buttons */
 .prev, .next {
-cursor: pointer;
-position: auto;
-top: 50%;
-width: auto;
-padding: 16px;
-margin-top: -22px;
-color: rgb(168, 157, 157);
-font-weight: bold;
-font-size: 18px;
-transition: 0.5s ease;
-border-radius: 0 3px 3px 0;
-user-select: none;
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: rgb(168, 157, 157);
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.5s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
 }
 
 .prev {
-position: absolute;
-margin-top: 3%;
-background-color: #0707078b;
+  margin-top: 3%;
+  background-color: #0707078b;
+  left: 0;
+  border-radius: 3px 0 0 3px;
 }
 
 /* Position the "next button" to the right */
 .next {
-border-radius: 3px 0 0 3px;
-position: absolute;
-right: 25%;
-margin-top: 3%;
-background-color: #0707078b;
+  border-radius: 0 3px 3px 0;
+  right: 0;
+  margin-top: 3%;
+  background-color: #0707078b;
 }
 
 /* On hover, add a black background color with a little bit see-through */
 .prev:hover, .next:hover {
-background-color: rgba(0,0,0,0.8);
+  background-color: rgba(0,0,0,0.8);
 }
 
 /* Caption text */
 .text {
-color: #f2f2f2;
-font-size: 15px;
-padding: 8px 12px;
-position: absolute;
-bottom: 8px;
-width: 100%;
-text-align: center;
-}
-
-/* Number text (1/3 etc) */
-.numbertext {
-color: #f2f2f2;
-font-size: 12px;
-padding: 8px 12px;
-position: absolute;
-top: 0;
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
 }
 
 /* The dots/bullets/indicators */
 .dot {
-cursor: pointer;
-height: 15px;
-width: 15px;
-margin: 0 2px;
-background-color: #bbb;
-border-radius: 50%;
-display: inline-block;
-transition: background-color 0.6s ease;
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
 }
 
 .active, .dot:hover {
-background-color: #717171;
+  background-color: #717171;
 }
 
 /* Fading animation */
 .fade {
-animation-name: fade;
-animation-duration: 0.5s;
+  animation-name: fade;
+  animation-duration: 2.5s;
 }
 
 @keyframes fade {
-from {opacity: .4} 
-to {opacity: 1}
+  from {opacity: .4} 
+  to {opacity: 1}
 }
 
 /* On smaller screens, decrease text size */
 @media only screen and (max-width: 300px) {
-.prev, .next, .text {font-size: 11px}
+  .prev, .next, .text {font-size: 11px}
 }
 
 .float-left {
@@ -226,7 +237,7 @@ to {opacity: 1}
   background-color: #798fae;
 }
 
-/* removed the repetitive css, made it into one.(right side) */
+/* Benefit section */
 .benefit-section {
   margin-bottom: 32px;
   color: #ffffff;
@@ -243,94 +254,85 @@ to {opacity: 1}
   max-width: 150px;
 }
 
-/* removed the repetitive css, made it into one.(left side) */
+/* Inner content section */
 .inner-content {
   margin-bottom: 20px;
-  padding: 50px;
+  padding: 20px;
   height: 300px;
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   background-color: #0c3267;
   color: #ffffff;
+  width: 100%; /* Ensure the content box stays within its parent */
+  max-width: 100%; /* Ensure the content box does not overflow */
+  box-sizing: border-box;
+  position: relative;
 }
 
-#comment-section {
-  text-align: center;
-  position: static;
-  bottom: 40px;
+/* Ensuring the form is properly aligned within its container */
+.form-content {
+  display: flex;
+  flex-direction: column; /* Ensure form elements stack vertically */
+  align-items: center; /* Center align form elements */
+  align-items: flex-start;
+  position: relative;
+}
+.form-content form {
+  width: 100%;
 }
 
-.comment-info {
-  display: inline-block;
-}
-
-.comment-box {
-  position: static;
-}
-
-.comment-box h2 {
-  font-size: 25px;
-  margin-bottom: 15px;
-}
-
-.comment-box h3 {
-  width: 75%;
-  height: 50px;
-  padding: 0 20px;
-  margin-bottom: 15px;
-  border-radius: 5px;
-  border: 3px solid #070707;
-}
-
-.comment-box input {
-  width: 75%;
-  height: 25px;
-  padding: 0 20px;
+.input-fields input {
+  width: 100%; /* Adjust the width to fit three inputs in a row */
+  padding: 10px;
   margin-bottom: 10px;
-  border-radius: 50px;
+  border-radius: 5px;
   font-family: cursive;
-  border: white;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
 }
 
-.comment-box input:focus {
-  border: 1px solid #000;
-  outline: 0;
+/* Styling for the comment box */
+.comment-box {
+  width: 100%;
+  margin-bottom: 10px;
+  margin-left: 5px;
 }
 
 .comment-box textarea {
-  width: 150%;
+  width: 100%; /* Ensure the input stays within the content box */
   height: 150px;
-  padding: 10px 10px;
-  margin-bottom: 10px;
-  border-radius: 25px;
+  padding: 5px;
+  border-radius: 5px;
   font-family: cursive;
-  border:  #f9fafa;
+  border: 1px solid #ccc;
+  box-sizing: border-box; /* Ensure padding is included in the width calculation */
 }
 
-.comment-box textarea:focus {
-  border: 1px solid #000;
-  outline: 0;
-}
-
-.comment-box button {
+.submit-button {
+  position: absolute;
+  float: right;
   border: 0;
   padding: 10px 30px;
-  background: rgb(244, 209, 118);
+  background: gold;
   font-size: 20px;
-  border-radius: 15px;
+  border-radius: 50px;
   color: #fff;
   cursor: pointer;
-  position: relative;
-  left: 170%;
-  bottom: 25%;
+  margin-top: 10px;
+  box-sizing: border-box; /* Ensure padding is included in the width calculation */
+  text-align: center; /* Center the text inside the button */
+  transition: background-color 0.3s, color 0.3s; /* Smooth transition for hover effect */
 }
 
-.comment-box button:hover {
-  background-color: #f5f4f4;
-  color: #000;
+  
+
+
+.submit-button:hover {
+  background-color: #000000;
+  color: gold;
 }
 
-/* Images */
 
+/* Inner content form */
 .inner-content form {
   display: flex;
 }
@@ -344,6 +346,7 @@ to {opacity: 1}
   font-size: 36px;
 }
 
+/* Footer */
 .footer {
   margin-top: 100px;
   width: 100%;
@@ -443,7 +446,7 @@ footer {
 
 .wave#wave3 {
   z-index: 1000;
-  opacity: 0.2;
+  opacity: 2;
   bottom: 15px;
   animation: animateWaves 3s linear infinite;
 }
@@ -457,18 +460,65 @@ footer {
 
 @keyframes animateWaves {
   0% {
-      background-position-x: 1000px;
+    background-position-x: 1000px;
   }
   100% {
-      background-position-x: 0px;
+    background-position-x: 0px;
   }
 }
 
 @keyframes animate {
   0% {
-      background-position-x: -1000px;
+    background-position-x: -1000px;
   }
   100% {
-      background-position-x: 0px;
+    background-position-x: 0px;
   }
 }
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+  section {
+    height: auto;
+  }
+
+  header {
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  .language-links, header ul {
+    flex-direction: column;
+  }
+
+  .slideshow-container {
+    top: auto;
+    padding-top: 20%;
+    padding-bottom: 20%;
+  }
+
+  .inner-content, .benefits {
+    width: 100%;
+    margin: 0;
+    padding: 10px;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  section header h1 {
+    font-size: 35px;
+  }
+
+  .language-links {
+    font-size: 14px;
+  }
+
+  .language-link img {
+    width: 12px;
+  }
+
+  .inner-content h2 {
+    font-size: 28px;
+  }
+}
+
