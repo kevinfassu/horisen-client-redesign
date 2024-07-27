@@ -1,8 +1,9 @@
 <!DOCTYPE html>
-<html lang="en-us">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="./assets/css/style.css">
     <title>website</title>
 </head>
@@ -11,9 +12,9 @@
     <section>
         <header>
             <div class="language-links">
-                <a href="#" onclick="changeLanguage('en')" class="language-link">EN <img src="assets/images/EN.jpeg" alt="English"></a> |
-                <a href="#" onclick="changeLanguage('es')" class="language-link">ES <img src="assets/images/ES.jpeg" alt="Spanish"></a> |
-                <a href="#" onclick="changeLanguage('it')" class="language-link">IT <img src="assets/images/IT.png" alt="Italian"></a>
+                <a href="#" onclick="changeLanguage('EN')" class="language-link">EN <img src="assets/images/EN.jpeg" alt="English"></a> |
+                <a href="#" onclick="changeLanguage('ES')" class="language-link">ES <img src="assets/images/ES.jpeg" alt="Spanish"></a> |
+                <a href="#" onclick="changeLanguage('IT')" class="language-link">IT <img src="assets/images/IT.png" alt="Italian"></a>
             </div>
             <h1 data-i18n="header.title">Medical Caregivers LLC</h1>
             <div>
@@ -29,17 +30,17 @@
 
     <main class="slideshow-container">
         <div class="mySlides fade">
-            <img src="./assets/images/social-media-marketing.jpg" style="width:100%">
+            <img src="./assets/images/social-media-marketing.jpg" alt="Social Media Marketing">
             <div class="text" data-i18n="slides.smm_text">Social Media Marketing</div>
         </div>
 
         <div class="mySlides fade">
-            <img src="./assets/images/online-reputation-management.jpg" style="width:100%">
+            <img src="./assets/images/online-reputation-management.jpg" alt="Online Reputation Management">
             <div class="text" data-i18n="slides.orm_text">Online Reputation Management</div>
         </div>
 
         <div class="mySlides fade">
-            <img src="./assets/images/search-engine-optimization.jpg" style="width:100%">
+            <img src="./assets/images/search-engine-optimization.jpg" alt="Search Engine Optimization">
             <div class="text" data-i18n="slides.seo_text">Search Engine Optimization</div>
         </div>
 
@@ -71,7 +72,7 @@
             }
             slides[slideIndex-1].style.display = "block";  
             dots[slideIndex-1].className += " active";
-            setTimeout(showSlides, 5000); // Change image every 1.5 seconds
+            setTimeout(showSlides, 5000); // Change image every 5 seconds
         }
 
         function plusSlides(n) {
@@ -116,10 +117,10 @@
                 Social media continues to have a sizable influence on buying habits. Social media marketing helps you determine which platforms are suited to your brand, using analytics to find the right markets and increase your lead generation.
             </p>
         </div>
-        <div class="inner-content">
+        <div class="inner-content form-content">
             <h2 id="comment-section" data-i18n="contact_us">Contact Us</h2>
             <form action="#">
-                <div class="comment-box">
+                <div class="input-fields">
                     <input type="text" name="full_name" placeholder="Full Name..." data-i18n="[placeholder]full_name">
                     <br>
                     <input type="email" name="email" placeholder="Email Address..." data-i18n="[placeholder]email_address">
@@ -129,7 +130,7 @@
                 </div>
                 <div class="comment-box">
                     <textarea name="comment" placeholder="Type Your Comment..." data-i18n="[placeholder]type_comment"></textarea>
-                    <button type="submit" data-i18n="submit">Submit</button>
+                    <button type="submit" data-i18n="submit" class="submit-button">Submit</button>
                 </div>
             </form>
         </div>
@@ -190,19 +191,20 @@
         <p>&copy;2024 RF Dev Solutions | All Rights Reserved</p>
     </footer>
 
-
+    <!-- Include jQuery -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://unpkg.com/i18next@21.6.0/dist/umd/i18next.min.js"></script>
-    <script src="https://unpkg.com/i18next-xhr-backend@3.2.2/dist/umd/i18nextXHRBackend.min.js"></script>
+    <script src="https://unpkg.com/i18next-http-backend@1.4.0/i18nextHttpBackend.min.js"></script>
     <script src="https://unpkg.com/jquery-i18next@1.2.1/dist/umd/jquery-i18next.min.js"></script>
     <script>
-        i18next.use(i18nextXHRBackend).init({
-            fallbackLng: 'en',
+        i18next.use(i18nextHttpBackend).init({
+            fallbackLng: 'EN',
             backend: {
                 loadPath: './locales/{{lng}}/translation.json'
             },
-            debug: true
+            debug: true // Enable debug mode to get more information in console
         }, function(err, t) {
+            if (err) console.error(err);
             jqueryI18next.init(i18next, $, {
                 useOptionsAttr: true
             });
@@ -211,6 +213,7 @@
 
         function changeLanguage(lng) {
             i18next.changeLanguage(lng, function(err, t) {
+                if (err) console.error(err);
                 $(document).localize();
             });
         }
