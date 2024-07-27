@@ -1,0 +1,37 @@
+{
+    "header": {
+        "title": "Cuidadores Médicos LLC",
+        "why_us": "Por qué nosotros",
+        "services": "Servicios",
+        "employment": "Empleo",
+        "request_free_consultation": "SOLICITAR CONSULTA GRATUITA"
+    },
+    "main": {
+        "autobiography": "Autobiografía",
+        "autobiography_content": "Greg A. Adams es el presidente y director ejecutivo de Kaiser Foundation Health Plan and Hospitals, que incluye atención y cobertura integradas bajo la marca Kaiser Permanente, la Fundación Médica KP y Risant Health y sus subsidiarias.",
+        "seo": {
+            "title": "Optimización en Motores de Búsqueda",
+            "content": "El dominio del uso de internet móvil significa que los usuarios están buscando el negocio adecuado mientras viajan, compran o se sientan en su sofá en casa. La optimización en motores de búsqueda (SEO) le permite aumentar su visibilidad y encontrar los clientes adecuados para su negocio."
+        },
+        "orm": {
+            "title": "Gestión de la Reputación Online",
+            "content": "La web está llena de opiniones, y algunas de ellas pueden ser negativas. Las redes sociales permiten a cualquiera con una conexión a internet decir lo que quiera sobre su negocio. La gestión de la reputación online le da el control sobre lo que los clientes potenciales ven cuando buscan su negocio."
+        },
+        "smm": {
+            "title": "Marketing en Redes Sociales",
+            "content": "Las redes sociales siguen teniendo una influencia considerable en los hábitos de compra. El marketing en redes sociales le ayuda a determinar qué plataformas son adecuadas para su marca, utilizando análisis para encontrar los mercados adecuados y aumentar su generación de clientes potenciales."
+        }
+    },
+    "contact_us": "Contáctenos",
+    "full_name": "Nombre Completo...",
+    "email_address": "Dirección de Email...",
+    "phone_number": "XXX-XXX-XXXX",
+    "type_comment": "Escriba su Comentario...",
+    "submit": "Enviar",
+    "lead_generation": "Generación de Clientes Potenciales",
+    "lead_generation_content": "Las estrategias de inbound marketing para la generación de clientes potenciales requieren menos trabajo para su negocio, llevando a los clientes directamente a su sitio web.",
+    "brand_awareness": "Conciencia de Marca",
+    "brand_awareness_content": "Los usuarios encuentran su negocio a través de búsquedas pagadas y orgánicas, aumentando el ranking de búsqueda y la visibilidad de su negocio.",
+    "cost_management": "Gestión de Costos",
+    "cost_management_content": "A medida que aumenta el ranking de búsqueda de su negocio, disminuyen sus costos de publicidad y ya no necesita anunciar su página."
+}
