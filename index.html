@@ -10,34 +10,40 @@
     <link href="https://unpkg.com/flowbite@1.4.7/dist/flowbite.min.css" rel="stylesheet">
 </head>
 
-<body class="bg-gray-200">
+<body class="bg-gray-200 font-serif">
     <header class="bg-white fixed top-0 w-full z-50 shadow">
-        <div class="container mx-auto flex justify-between items-center p-4">
-            <div class="relative flex space-x-4" id="language-dropdown">
-                <button id="dropdownDefaultButton" data-dropdown-toggle="dropdown" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" type="button">
-                    EN <img src="assets/images/EN.jpeg" alt="English" class="w-4 h-4 ms-2 inline-flex items-center">
-                    <svg class="w-2.5 h-2.5 ms-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
-                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
-                    </svg>
-                </button>
+        <div class="flex items-center justify-between p-4">
+            <button id="dropdownRadioBgHoverButton" data-dropdown-toggle="dropdownRadioBgHover" class="text-gold bg-blue-900 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 " type="button">Language 
+                <svg class="w-2 h-2.5 ms-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
+                </svg>
+            </button>
             
-                <!-- Dropdown menu -->
-                <div id="dropdown" class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700">
-                    <ul class="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownDefaultButton">
-                        <li>
-                            <a href="#" onclick="changeLanguage('EN')" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">EN <img src="assets/images/EN.jpeg" alt="English" class="w-4 h-4 inline ms-2"></a>
-                        </li>
-                        <li>
-                            <a href="#" onclick="changeLanguage('ES')" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">ES <img src="assets/images/ES.jpeg" alt="Spanish" class="w-4 h-4 inline ms-2"></a>
-                        </li>
-                        <li>
-                            <a href="#" onclick="changeLanguage('IT')" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">IT <img src="assets/images/IT.png" alt="Italian" class="w-4 h-4 inline ms-2"></a>
-                        </li>
-                    </ul>
-                </div>
+            <!-- Dropdown menu -->
+            <div id="dropdownRadioBgHover" class="z-10 hidden w-48 bg-white divide-y divide-gray-100 rounded-lg shadow dark:bg-gray-700 dark:divide-gray-600">
+                <ul class="p-3 space-y-1 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownRadioBgHoverButton">
+                    <li>
+                        <div class="flex items-center p-2 rounded hover:bg-gray-100 dark:hover:bg-gray-600">
+                            <input id="default-radio-4" type="radio" value="" name="default-radio" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
+                            <label for="default-radio-4" class="w-full ms-2 text-sm font-medium text-gray-900 rounded dark:text-gray-300">Default radio</label>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="flex items-center p-2 rounded hover:bg-gray-100 dark:hover:bg-gray-600">
+                            <input checked id="default-radio-5" type="radio" value="" name="default-radio" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
+                            <label for="default-radio-5" class="w-full ms-2 text-sm font-medium text-gray-900 rounded dark:text-gray-300">Checked state</label>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="flex items-center p-2 rounded hover:bg-gray-100 dark:hover:bg-gray-600">
+                            <input id="default-radio-6" type="radio" value="" name="default-radio" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
+                            <label for="default-radio-6" class="w-full ms-2 text-sm font-medium text-gray-900 rounded dark:text-gray-300">Default radio</label>
+                        </div>
+                    </li>
+                </ul>
             </div>
             
-            <div class="text-center">
+            <div class="text-center flex-grow">
                 <h1 class="text-6xl font-cursive text-gold">Medical Caregivers LLC</h1>
             </div>
             <div>
@@ -46,16 +52,18 @@
         </div>
         <nav class="bg-blue-900 text-white hidden md:block">
             <ul class="flex justify-center space-x-4 py-2">
-                <li><a href="#WhyUs" class="hover:text-gold">Why Us</a></li>
-                <li><a href="#Services" class="hover:text-gold">Services</a></li>
-                <li><a href="#Employment" class="hover:text-gold">Employment</a></li>
-                <li><a href="#RequestFreeConsultation" class="hover:text-gold">REQUEST FREE CONSULTATION</a></li>
+                <li><a href="#WhyUs" class="hover-button">Why Us</a></li>
+                <li><a href="#Services" class="hover-button">Services</a></li>
+                <li><a href="#Employment" class="hover-button">Employment</a></li>
+                <li><a href="#RequestFreeConsultation" class="hover-button">REQUEST FREE CONSULTATION</a></li>
             </ul>
         </nav>
+        
         <div class="block md:hidden">
             <button onclick="toggleMobileMenu()" class="text-blue-900 text-3xl">&#9776;</button>
         </div>
     </header>
+    
 
     <div id="mobile-menu" class="fixed inset-y-0 right-0 bg-blue-900 text-white hidden md:hidden z-50">
         <button onclick="toggleMobileMenu()" class="text-white text-3xl absolute top-4 right-4">&#10005;</button>
