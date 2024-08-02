@@ -1,602 +1,102 @@
-/* Global settings */
-* {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
+/* Custom CSS styles */
+.text-gold {
+  color: gold;
 }
 
-body {
-  background-color: #d9dcd6;
-  margin: 0;
-  padding: 0;
-  width: 100%;
-}
-
-main {
-  width: 100%;
-  padding: 20px;
-}
-
-/* Header section */
-section {
-  position: fixed;
-  z-index: 10;
-  color: #0c3267;
-  padding: 10px;
-  font-family: cursive;
-  background-color: #d9dcd6;
-  text-decoration: none;
-  width: 100%;
-  height: 15%;
-}
-
-/* Header logo */
-.header-logo {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  width: 250px; /* Adjust as needed */
-  height: auto;
-}
-
-/* Main container */
-.main-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  padding-top: 170px; /* Adjust padding to avoid overlap with the header */
-}
-
-
-.language-links {
-  position: absolute;
-  top: 10px;
-  left: 10px;
-  font-size: 18px;
-}
-
-.language-link {
-  color: #0c3267;
-  text-decoration: none;
+.language-links a {
+  display: inline-flex;
+  align-items: center;
   margin: 0 5px;
+  text-decoration: none;
+  color: #0c3267;
 }
 
-.language-link:hover {
+.language-links a:hover {
   text-decoration: underline;
 }
 
-.language-link img {
-  width: 16px; /* Adjust the width as needed */
+.language-links img {
+  width: 16px;
   height: auto;
   margin-left: 5px;
-  vertical-align: middle;
 }
 
-/* Medical Care Givers */
-section header h1 {
-  text-align: center;
-  justify-content: space-between;
-  font-size: 36px;
-  line-height: normal;
-  font-family: cursive;
-  margin: 0;
-  padding: 0;
-}
-
-/* Contact number */
-section header h2 {
-  text-align: right;
-  justify-content: space-between;
-  font-size: 20px;
-  line-height: normal;
-  display: flex;
-}
-
-/* Navigation tabs */
-section header div ul {
-  font-size: 15px;
-  list-style-type: none;
-  text-align: center;
-  margin-top: 0px;
-  line-height: 10px;
-}
-
-/* Navigation tabs items */
-section header div ul li {
-  display: inline-block;
-  padding: 8px 20px;
-  margin: 20px 25px;
-  background: white;
-  border-radius: 50px;
-  transition: background-color 0.3s, color 0.3s;
-}
-
-a {
+.navbar-nav .nav-link {
   color: #0c3267;
-  text-decoration: none;
+}
+
+.navbar-nav .nav-link:hover {
+  color: gold;
+}
+
+.carousel-caption {
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 10px;
+}
+
+.card-body h3 {
+  color: #0c3267;
+}
+
+footer {
+  background: #0c3267;
+  color: rgb(244, 209, 118);
+}
+
+footer a {
+  color: rgb(244, 209, 118);
+}
+
+footer a:hover {
+  color: white;
+}
+
+.carousel-item {
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.carousel-item.active {
+  opacity: 1;
+}
+
+/* Mobile menu */
+#mobile-menu {
+  transform: translateX(100%);
+  transition: transform 0.3s ease-in-out;
+}
+
+#mobile-menu.active {
+  transform: translateX(0);
+}
+
+#language-dropdown button {
+  background: none;
+  border: none;
   cursor: pointer;
 }
 
-a:hover {
+#language-dropdown #dropdown-menu a {
+  color: #0c3267;
+  display: block;
+}
+
+#language-dropdown #dropdown-menu a:hover {
+  background-color: #f1f1f1;
+}
+
+/* Ensure the header text color */
+header h1 {
   color: gold;
 }
 
-section header div ul li:hover {
-  background-color: #0c3267;
-  color: gold;
-}
-
-p {
-  font-size: 20px;
-}
-
-/* Slideshow container */
-.slideshow-container {
-  max-width: 100%;
+#default-carousel {
   width: 100%;
-  margin: auto;
-  padding-top: 170px;
-  z-index: 1;
-  position: relative;
-  height: 800px;
-  overflow: hidden;
+  height: 100vh;
 }
 
-/* Slides */
-.mySlides {
-  display: none;
-  position: relative;
-  z-index: 1;
-  height: 900px;
-  bottom: 50px;
-}
-
-/* Slide images */
-.mySlides img {
+#default-carousel img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
-
-/* Next & previous buttons */
-.prev, .next {
-  cursor: pointer;
-  position: absolute;
-  top: 59%;
-  width: auto;
-  padding: 16px;
-  margin-top: -22px;
-  color: rgb(168, 157, 157);
-  font-weight: bold;
-  font-size: 18px;
-  transition: 0.5s ease;
-  border-radius: 0 3px 3px 0;
-  user-select: none;
-  z-index: 2; /* Ensure buttons are above slides */
-}
-
-.prev {
-  left: 0;
-  background-color: #0707078b;
-}
-
-/* Position the "next button" to the right */
-.next {
-  right: 0;
-  border-radius: 3px 0 0 3px;
-  background-color: #0707078b;
-}
-
-/* On hover, add a black background color with a little bit see-through */
-.prev:hover, .next:hover {
-  background-color: rgba(0,0,0,0.8);
-}
-
-/* Caption text */
-.text {
-  color: #f2f2f2;
-  font-size: 15px;
-  padding: 8px 12px;
-  position: absolute;
-  bottom: 8px;
-  width: 100%;
-  text-align: center;
-  z-index: 2; /* Ensure text is above slides */
-}
-
-/* Number text (1/3 etc) */
-.numbertext {
-  color: #f2f2f2;
-  font-size: 12px;
-  padding: 8px 12px;
-  position: absolute;
-  top: 0;
-  z-index: 2; /* Ensure number text is above slides */
-}
-
-.text-container {
-  text-align: center;
-  margin: 40px auto;
-  padding: 20px;
-  background-color: transparent; /* Light background */
-  color: #333; /* Dark text */
-  max-width: 900px;
-  border-radius: 0px;
-  box-shadow: none;
-  padding-top: 20px;
-}
-
-.text-container h2 {
-  font-size: 2.5em;
-  font-weight: bold;
-  color: #0c3267;
-  margin-bottom: 20px;
-}
-
-.text-container p {
-  font-size: 1.2em;
-  color: #666666;
-  line-height: 1.6;
-}
-
-.mySlides .text {
-  display: none;
-}
-
-.clearfix::after {
-  content: "";
-  clear: both;
-  display: table;
-}
-
-.bi0 {
-  padding-left: 25%;
-  display: flex;
-  left: 30%
-}
-
-.fade {
-  animation-name: fade;
-  animation-duration: 2.5s;
-}
-
-
-@keyframes fade {
-  from {opacity: .4} 
-  to {opacity: 1}
-}
-
-/* On smaller screens, decrease text size */
-@media only screen and (max-width: 300px) {
-  .prev, .next, .text {font-size: 11px}
-}
-
-.float-left {
-  float: left;
-  margin-right: 25px;
-}
-
-.float-right {
-  float: right;
-  margin-left: 25px;
-}
-
-.content {
-  width: 75%;
-  display: inline-block;
-  margin-left: 20px;
-}
-
-.benefits {
-  margin-right: 20px;
-  padding: 20px;
-  clear: both;
-  float: right;
-  width: 20%;
-  height: 103.7pc;
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-  background-color: #798fae;
-}
-
-/* Benefit section */
-.benefit-section {
-  margin-bottom: 32px;
-  color: #ffffff;
-  font-size: 18px;
-}
-
-.benefit-section h3 {
-  margin-bottom: 10px;
-  text-align: center;
-  font-size: 35px;
-}
-
-.benefit-section img {
-  display: block;
-  margin: 10px auto;
-  max-width: 200px;
-  height: 250px;
-  width: 200px;
-}
-
-/* Inner content section */
-.inner-content {
-  margin-bottom: 20px;
-  padding: 20px;
-  height: 400px;
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-  background-color: #0c3267;
-  color: #ffffff;
-  width: 100%; /* Ensure the content box stays within its parent */
-  max-width: 100%; /* Ensure the content box does not overflow */
-  box-sizing: border-box;
-  position: relative;
-}
-
-.inner-content p {
-  line-height: 1.5;
-  margin-bottom: 80px;
-}
-
-#comment-section {
-  text-align: center;
-  position: static;
-  bottom: 40px;
-}
-
-.comment-info {
-  display: inline-block;
-}
-
-/* Ensuring the form is properly aligned within its container */
-.form-content {
-  display: flex;
-  flex-direction: column; /* Ensure form elements stack vertically */
-  align-items: center; /* Center align form elements */
-  align-items: flex-start;
-  position: relative;
-}
-.form-content form {
-  width: 100%;
-}
-
-.input-fields input {
-  width: 100%; /* Adjust the width to fit three inputs in a row */
-  padding: 1px;
-  margin-bottom: 10px;
-  border-radius: 5px;
-  font-family: cursive;
-  border: 1px solid #ccc;
-  box-sizing: border-box;
-}
-
-/* Styling for the comment box */
-.comment-box {
-  width: 100%;
-  margin-bottom: 10px;
-  margin-left: 5px;
-}
-
-.comment-box textarea {
-  width: 90%; /* Ensure the input stays within the content box */
-  height: 287px;
-  padding: 5px;
-  border-radius: 5px;
-  font-family: cursive;
-  border: 1px solid #ccc;
-  box-sizing: border-box; /* Ensure padding is included in the width calculation */
-  resize: none;
-}
-
-.submit-button {
-  position: absolute;
-  float: right;
-  border: 0;
-  padding: 10px 30px;
-  background: gold;
-  font-size: 20px;
-  border-radius: 50px;
-  color: #fff;
-  cursor: pointer;
-  margin-top: 243px;
-  box-sizing: border-box; /* Ensure padding is included in the width calculation */
-  text-align: center; /* Center the text inside the button */
-  transition: background-color 0.3s, color 0.3s; /* Smooth transition for hover effect */
-}
-
-.submit-button:hover {
-  background-color: #000000;
-  color: gold;
-}
-
-/* Inner content form */
-.inner-content form {
-  display: flex;
-}
-
-.inner-content img {
-  max-height: 200px;
-}
-
-.inner-content h2 {
-  margin-bottom: 20px;
-  font-size: 36px;
-}
-
-/* Footer */
-.footer {
-  margin-top: 100px;
-  width: 100%;
-  background-color: black;
-}
-
-footer {
-  color: black;
-}
-
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap");
-
-.footer {
-  position: relative;
-  width: 100%;
-  background: #0c3267;
-  min-height: 100px;
-  padding: 20px 50px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
-
-.social-icon,
-.menu {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 10px 0;
-  flex-wrap: wrap;
-}
-
-.social-icon__item,
-.menu__item {
-  list-style: none;
-}
-
-.social-icon__link {
-  font-size: 2rem;
-  color: #fff;
-  margin: 0 10px;
-  display: inline-block;
-  transition: 0.5s;
-}
-
-.social-icon__link:hover {
-  transform: translateY(-10px);
-}
-
-.menu__link {
-  font-size: 1.2rem;
-  color: rgb(244, 209, 118);
-  margin: 0 10px;
-  display: inline-block;
-  transition: 0.5s;
-  text-decoration: none;
-  opacity: 0.75;
-  font-weight: 300;
-}
-
-.menu__link:hover {
-  opacity: 1;
-}
-
-.footer p {
-  color: rgb(244, 209, 118);
-  margin: 15px 0 10px 0;
-  font-size: 1rem;
-  font-weight: 300;
-}
-
-.wave {
-  position: absolute;
-  top: -100px;
-  left: 0;
-  width: 100%;
-  height: 100px;
-  background: url("https://i.ibb.co/wQZVxxk/wave.png");
-  background-size: 1000px 100px;
-}
-
-.wave#wave1 {
-  z-index: 1000;
-  opacity: 1;
-  bottom: 0;
-  animation: animateWaves 4s linear infinite;
-}
-
-.wave#wave2 {
-  z-index: 999;
-  opacity: 0.5;
-  bottom: 10px;
-  animation: animate 4s linear infinite !important;
-}
-
-.wave#wave3 {
-  z-index: 1000;
-  opacity: 2;
-  bottom: 15px;
-  animation: animateWaves 3s linear infinite;
-}
-
-.wave#wave4 {
-  z-index: 999;
-  opacity: 0.7;
-  bottom: 20px;
-  animation: animate 3s linear infinite;
-}
-
-@keyframes animateWaves {
-  0% {
-    background-position-x: 1000px;
-  }
-  100% {
-    background-position-x: 0px;
-  }
-}
-
-@keyframes animate {
-  0% {
-    background-position-x: -1000px;
-  }
-  100% {
-    background-position-x: 0px;
-  }
-}
-
-/* Responsive adjustments */
-@media screen and (max-width: 768px) {
-  section {
-    height: auto;
-  }
-
-  header {
-    flex-direction: column;
-    padding: 20px;
-  }
-
-  .language-links, header ul {
-    flex-direction: column;
-  }
-
-  .slideshow-container {
-    top: auto;
-    padding-top: 20%;
-    padding-bottom: 20%;
-  }
-
-  .inner-content, .benefits {
-    width: 100%;
-    margin: 0;
-    padding: 10px;
-  }
-}
-
-@media screen and (max-width: 576px) {
-  section header h1 {
-    font-size: 35px;
-  }
-
-  .language-links {
-    font-size: 14px;
-  }
-
-  .language-link img {
-    width: 12px;
-  }
-
-  .inner-content h2 {
-    font-size: 28px;
-  }
-}
-
-

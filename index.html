@@ -2,242 +2,307 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="./assets/css/style.css">
-    <title>website</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medical Caregivers LLC</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link href="https://unpkg.com/flowbite@1.4.7/dist/flowbite.min.css" rel="stylesheet">
 </head>
 
-<body>
-    <section>
-        <header>
-            <div class="language-links">
-                <a href="#" onclick="changeLanguage('EN')" class="language-link">EN <img src="assets/images/EN.jpeg" alt="English"></a> |
-                <a href="#" onclick="changeLanguage('ES')" class="language-link">ES <img src="assets/images/ES.jpeg" alt="Spanish"></a> |
-                <a href="#" onclick="changeLanguage('IT')" class="language-link">IT <img src="assets/images/IT.png" alt="Italian"></a>
+<body class="bg-gray-200">
+    <header class="bg-white fixed top-0 w-full z-50 shadow">
+        <div class="container mx-auto flex justify-between items-center p-4">
+            <div class="relative flex space-x-4" id="language-dropdown">
+                <button id="dropdownDefaultButton" data-dropdown-toggle="dropdown" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" type="button">
+                    EN <img src="assets/images/EN.jpeg" alt="English" class="w-4 h-4 ms-2 inline-flex items-center">
+                    <svg class="w-2.5 h-2.5 ms-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
+                    </svg>
+                </button>
+            
+                <!-- Dropdown menu -->
+                <div id="dropdown" class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700">
+                    <ul class="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownDefaultButton">
+                        <li>
+                            <a href="#" onclick="changeLanguage('EN')" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">EN <img src="assets/images/EN.jpeg" alt="English" class="w-4 h-4 inline ms-2"></a>
+                        </li>
+                        <li>
+                            <a href="#" onclick="changeLanguage('ES')" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">ES <img src="assets/images/ES.jpeg" alt="Spanish" class="w-4 h-4 inline ms-2"></a>
+                        </li>
+                        <li>
+                            <a href="#" onclick="changeLanguage('IT')" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">IT <img src="assets/images/IT.png" alt="Italian" class="w-4 h-4 inline ms-2"></a>
+                        </li>
+                    </ul>
+                </div>
             </div>
-            <h1 data-i18n="header.title">Medical Caregivers LLC</h1>
-            <img src="assets/images/Medical Cargivers Logo.png" alt="Logo" class="header-logo">
+            
+            <div class="text-center">
+                <h1 class="text-6xl font-cursive text-gold">Medical Caregivers LLC</h1>
+            </div>
             <div>
-                <ul>
-                    <li><a href="#WhyUs" data-i18n="header.why_us">Why Us</a></li>
-                    <li><a href="#Services" data-i18n="header.services">Services</a></li>
-                    <li><a href="#Employment" data-i18n="header.employment">Employment</a></li>
-                    <li><a href="#RequestFreeConsultation" data-i18n="header.request_free_consultation">REQUEST FREE CONSULTATION</a></li>
-                </ul>
+                <img src="assets/images/Medical Cargivers Logo.png" alt="Logo" class="w-36 h-auto">
             </div>
-        </header>
-    </section>
-
-    <main class="clearfix">
-        <div class="slideshow-container">
-            <div class="mySlides fade">
-                <img src="assets/images/AdobeStock_830854888_Preview.jpeg" style="width:100%">
-                <div class="text" data-i18n="slides.smm_text">Social Media Marketing</div>
-            </div>
-
-            <div class="mySlides fade">
-                <img src="assets/images/AdobeStock_640582926_Preview 2.jpeg" style="width:100%">
-                <div class="text" data-i18n="slides.orm_text">Online Reputation Management</div>
-            </div>
-
-            <div class="mySlides fade">
-                <img src="assets/images/AdobeStock_738804327_Preview.jpeg" style="width:100%">
-                <div class="text" data-i18n="slides.seo_text">Search Engine Optimization</div>
-            </div>
-
-            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-            <a class="next" onclick="plusSlides(1)">&#10095;</a>
         </div>
-        <div class="text-container">
-            <h2>Mission Statement</h2>
-            <p>Our mission is to provide superior healthcare services that include respect and dignity to each individual, nurture the spirit and body, provide memorable experiences, and honor family values. Our patients and their families will want to recommend our services to family and friends, and physicians will refer us to their patients. Our Core Values are COMPASSION, HONOR, and DIGNITY for ALL sacred life. 
-            </p>
+        <nav class="bg-blue-900 text-white hidden md:block">
+            <ul class="flex justify-center space-x-4 py-2">
+                <li><a href="#WhyUs" class="hover:text-gold">Why Us</a></li>
+                <li><a href="#Services" class="hover:text-gold">Services</a></li>
+                <li><a href="#Employment" class="hover:text-gold">Employment</a></li>
+                <li><a href="#RequestFreeConsultation" class="hover:text-gold">REQUEST FREE CONSULTATION</a></li>
+            </ul>
+        </nav>
+        <div class="block md:hidden">
+            <button onclick="toggleMobileMenu()" class="text-blue-900 text-3xl">&#9776;</button>
+        </div>
+    </header>
+
+    <div id="mobile-menu" class="fixed inset-y-0 right-0 bg-blue-900 text-white hidden md:hidden z-50">
+        <button onclick="toggleMobileMenu()" class="text-white text-3xl absolute top-4 right-4">&#10005;</button>
+        <ul class="flex flex-col items-center space-y-4 py-4 mt-12">
+            <li><a href="#WhyUs" class="hover:text-gold">Why Us</a></li>
+            <li><a href="#Services" class="hover:text-gold">Services</a></li>
+            <li><a href="#Employment" class="hover:text-gold">Employment</a></li>
+            <li><a href="#RequestFreeConsultation" class="hover:text-gold">REQUEST FREE CONSULTATION</a></li>
+        </ul>
+    </div>
+
+    <main class="mt-32">
+        <div id="default-carousel" class="relative w-full h-screen" data-carousel="slide">
+            <!-- Carousel wrapper -->
+            <div class="relative h-full overflow-hidden rounded-lg">
+                <!-- Item 1 -->
+                <div class="hidden duration-1000 ease-in-out" data-carousel-item>
+                    <img src="assets/images/AdobeStock_830854888_Preview.jpeg" class="absolute block w-full h-full object-cover" alt="Social Media Marketing">
+                </div>
+                <!-- Item 2 -->
+                <div class="hidden duration-1000 ease-in-out" data-carousel-item>
+                    <img src="assets/images/AdobeStock_640582926_Preview 2.jpeg" class="absolute block w-full h-full object-cover" alt="Online Reputation Management">
+                </div>
+                <!-- Item 3 -->
+                <div class="hidden duration-1000 ease-in-out" data-carousel-item>
+                    <img src="assets/images/AdobeStock_738804327_Preview.jpeg" class="absolute block w-full h-full object-cover" alt="Search Engine Optimization">
+                </div>
+            </div>
+            <!-- Slider indicators -->
+            <div class="absolute z-30 flex -translate-x-1/2 bottom-5 left-1/2 space-x-3 rtl:space-x-reverse">
+                <button type="button" class="w-3 h-3 rounded-full bg-white" aria-current="true" aria-label="Slide 1" data-carousel-slide-to="0"></button>
+                <button type="button" class="w-3 h-3 rounded-full bg-gray-400" aria-current="false" aria-label="Slide 2" data-carousel-slide-to="1"></button>
+                <button type="button" class="w-3 h-3 rounded-full bg-gray-400" aria-current="false" aria-label="Slide 3" data-carousel-slide-to="2"></button>
+            </div>
+            <!-- Slider controls -->
+            <button type="button" class="absolute top-0 left-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-prev>
+                <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 group-hover:bg-white/50 group-focus:ring-4 group-focus:ring-white group-focus:outline-none">
+                    <svg class="w-4 h-4 text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 1 1 5l4 4"/>
+                    </svg>
+                    <span class="sr-only">Previous</span>
+                </span>
+            </button>
+            <button type="button" class="absolute top-0 right-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-next>
+                <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 group-hover:bg-white/50 group-focus:ring-4 group-focus:ring-white group-focus:outline-none">
+                    <svg class="w-4 h-4 text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"/>
+                    </svg>
+                    <span class="sr-only">Next</span>
+                </span>
+            </button>
+        </div>
+
+        <div class="container mx-auto my-10 text-center">
+            <h2 class="text-3xl font-bold text-blue-900">Mission Statement</h2>
+            <p class="text-lg text-gray-700 mt-4">Our mission is to provide superior healthcare services that include respect and dignity to each individual, nurture the spirit and body, provide memorable experiences, and honor family values. Our patients and their families will want to recommend our services to family and friends, and physicians will refer us to their patients. Our Core Values are COMPASSION, HONOR, and DIGNITY for ALL sacred life.</p>
         </div>
     </main>
 
-    <div style="text-align:center">
-        <span class="dot" onclick="currentSlide(1)"></span>
-        <span class="dot" onclick="currentSlide(2)"></span>
-        <span class="dot" onclick="currentSlide(3)"></span>
-    </div>
-
-    <script>
-        let slideIndex = 0;
-        showSlides();
-
-        function showSlides() {
-            let i;
-            let slides = document.getElementsByClassName("mySlides");
-            let dots = document.getElementsByClassName("dot");
-            for (i = 0; i < slides.length; i++) {
-                slides[i].style.display = "none";  
-            }
-            slideIndex++;
-            if (slideIndex > slides.length) {slideIndex = 1}    
-            for (i = 0; i < dots.length; i++) {
-                dots[i].className = dots[i].className.replace(" active", "");
-            }
-            slides[slideIndex-1].style.display = "block";  
-            if (dots[slideIndex-1]) dots[slideIndex-1].className += " active";
-            setTimeout(showSlides, 5000); // Change image every 5 seconds
-        }
-
-        function plusSlides(n) {
-            slideIndex += n;
-            if (slideIndex > document.getElementsByClassName("mySlides").length) {slideIndex = 1}
-            if (slideIndex < 1) {slideIndex = document.getElementsByClassName("mySlides").length}
-            showSlides();
-        }
-
-        function currentSlide(n) {
-            slideIndex = n;
-            showSlides();
-        }
-    </script>
-
-    <aside class="content">
-        <div class="inner-content">
-            <img alt="" src="assets/images/AdobeStock_247398673_Preview.jpeg" class="float-left" />
-            <h2 data-i18n="main.seo.title">Robert Ivan Rodriguez</h2>
-            <p data-i18n="main.seo.content">
-                Medical Caregivers LLC was founded by Robert Ivan Rodriguez, a nurse with specialty in Respiratory Therapy and Physical Rehabilitation. Ivan, as his family and students know him, personally experienced the challenges of healthcare because of his dear mother Sara's ongoing battle with dementia. Ivan felt that care and compassion are an integral part of treatment. Inspired to use his experience to help others, Ivan combined his knowledge in healthcare and passion for showing care to individual patients in order to help others navigate through this challenging time. When he is not working, Robert Ivan maintains his fitness through Martial Arts. He is a Martial Arts Instructor who holds black belts in Judo,  Kendo,  Iaido,  Taekwondo WTF,  and Kung Fu Southern style. All these disciplines have instilled in Ivan the moral values, integrity, patience, perspective, and respect for all living things.  He applies these values in his approach to clients' needs. At Medical Caregivers LLC, we are constantly asking ourselves how we can do more and make a greater difference in someone's life, and that starts with treating every patient we meet with COMPASSION, HONOR, and DIGNITY.  Let's work together and help patients achieve their goals, as well as providing them lasting memories!
-            </p>
-        </div>
-        <div class="inner-content">
-            <img alt="" src="assets/images/AdobeStock_830176793_Preview.jpeg" class="float-right" />
-            <h2 data-i18n="main.orm.title">Online Reputation Management</h2>
-            <p data-i18n="main.orm.content">
-                The web is full of opinions, and some of these can be negative. Social media allows anyone with an internet connection to say whatever they want about your business. Online Reputation Management gives you the control over what potential customers see when they search for your business.
-            </p>
-        </div>
-        <div class="inner-content">
-            <img alt="" src="assets/images/AdobeStock_628607045_Preview.jpeg" class="float-left" />
-            <h2 data-i18n="main.smm.title">Social Media Marketing</h2>
-            <p data-i18n="main.smm.content">
-                Social media continues to have a sizable influence on buying habits. Social media marketing helps you determine which platforms are suited to your brand, using analytics to find the right markets and increase your lead generation.
-            </p>
-        </div>
-        <div class="inner-content form-content">
-            <h2 id="comment-section" data-i18n="contact_us">Contact Us</h2>
-            <form action="#">
-                <div class="input-fields">
-                    <input type="text" name="full_name" placeholder="Full Name..." data-i18n="[placeholder]full_name">
-                    <br>
-                    <input type="email" name="email" placeholder="Email Address..." data-i18n="[placeholder]email_address">
-                    <br>
-                    <input type="phone number" name="phone number" placeholder="XXX-XXX-XXXX" data-i18n="[placeholder]phone_number">
-                    <br>
+    <section class="container mx-auto my-10">
+        <div class="flex flex-wrap">
+            <div class="w-full md:w-3/4 flex flex-wrap">
+                <div class="md:w-1/2 lg:w-1/4 p-4">
+                    <div class="bg-white shadow-lg rounded overflow-hidden h-full">
+                        <img src="assets/images/AdobeStock_247398673_Preview.jpeg" alt="Robert Ivan Rodriguez" class="w-full h-48 object-cover">
+                        <div class="p-4">
+                            <h3 class="text-xl font-bold text-blue-900">Robert Ivan Rodriguez</h3>
+                            <p class="text-gray-700 mt-2">Medical Caregivers LLC was founded by Robert Ivan Rodriguez, a nurse with specialty in Respiratory Therapy and Physical Rehabilitation...</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="comment-box">
-                    <textarea name="comment" placeholder="Type Your Comment..." data-i18n="[placeholder]type_comment"></textarea>
-                    <button type="submit" data-i18n="submit" class="submit-button">Submit</button>
+                <div class="md:w-1/2 lg:w-1/4 p-4">
+                    <div class="bg-white shadow-lg rounded overflow-hidden h-full">
+                        <img src="assets/images/AdobeStock_830176793_Preview.jpeg" alt="Online Reputation Management" class="w-full h-48 object-cover">
+                        <div class="p-4">
+                            <h3 class="text-xl font-bold text-blue-900">Online Reputation Management</h3>
+                            <p class="text-gray-700 mt-2">The web is full of opinions, and some of these can be negative...</p>
+                        </div>
+                    </div>
                 </div>
-            </form>
+                <div class="md:w-1/2 lg:w-1/4 p-4">
+                    <div class="bg-white shadow-lg rounded overflow-hidden h-full">
+                        <img src="assets/images/AdobeStock_628607045_Preview.jpeg" alt="Social Media Marketing" class="w-full h-48 object-cover">
+                        <div class="p-4">
+                            <h3 class="text-xl font-bold text-blue-900">Social Media Marketing</h3>
+                            <p class="text-gray-700 mt-2">Social media continues to have a sizable influence on buying habits...</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="md:w-1/2 lg:w-1/4 p-4">
+                    <div class="bg-white shadow-lg rounded overflow-hidden h-full">
+                        <img src="assets/images/AdobeStock_738804327_Preview.jpeg" alt="SEO" class="w-full h-48 object-cover">
+                        <div class="p-4">
+                            <h3 class="text-xl font-bold text-blue-900">Search Engine Optimization</h3>
+                            <p class="text-gray-700 mt-2">Search engine optimization helps increase visibility...</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="w-full md:w-1/4 p-4">
+                <div class="bg-white shadow-lg rounded p-4">
+                    <h3 class="text-xl font-bold text-blue-900">Services</h3>
+                    <ul class="list-disc list-inside text-gray-700 mt-4">
+                        <li>24/7 Customer Support (XXX-XXX-XXXX)</li>
+                        <li>Hospice & Palliative Care</li>
+                        <li>Concierge Services</li>
+                        <li>Hygiene and Grooming</li>
+                        <li>Dressing</li>
+                        <li>Feeding and Drinking</li>
+                        <li>Transferring</li>
+                        <li>Eliminating Care</li>
+                        <li>Assistance with Prosthetic Devices</li>
+                        <li>Catheter Care Assistance/ Feeding Bag</li>
+                        <li>Oxygen Therapy/ Breathing Therapy</li>
+                        <li>Infectious Disease Care (Covid-19 TB, HBV, MIRSA)</li>
+                        <li>Medical Appointments</li>
+                        <li>Activities Transportation</li>
+                        <li>Walking Assistance</li>
+                        <li>Use of Medical Equipment</li>
+                        <li>Light Cleaning/ Cooking</li>
+                        <li>Range of Motion Exercises</li>
+                    </ul>
+                </div>
+            </div>
         </div>
-    </aside>
+    </section>
 
-    <div class="benefits">
-        <div class="benefit-section">
-            <h3 data-i18n="lead_generation">Services</h3>
-            <p data-i18n="lead_generation_content">
-                <li>24/7 Customer Support (XXX-XXX-XXXX)</li>
-                <li>Hospice & Palliative Care</li>
-                <li>Concierge Services</li>
-                <li>Hygiene and Grooming</li>
-                <li>Dressing</li>
-                <li>Feeding and Drinking</li>
-                <li>Transferring</li>
-                <li>Eliminating Care</li>
-                <li>Assistance with Prosthetic Devices</li>
-                <li>Catheter Care Assistance/ Fedding Bag</li>
-                <li>Oxygen Therapy/ Breathing Therapy</li>
-                <li>Infectious Disease Care (Covid-19 TB, HBV, MIRSA)</li>
-                <li>Medical Appointments</li>
-                <li>Activities Transportation</li>
-                <li> Walking Assistance</li>
-                <li> Use of Medical Equipment</li>
-                <li>Light Cleaning/ Cooking</li>
-                <li>Range of Motion Exercises</li>
-        </div>
-        <div class="benefit-section">
-            <h3 data-i18n="brand_awareness">We Specialize In</h3>
-            <p data-i18n="brand_awareness_content">
-                <li>Dementia</li>
-                <li>Alzhemer's Disease</li>
-                <li>Schizophrenia</li>
-                <li>Bipolar Disorder</li>
-                <li>Quadriplegic Cases</li>
-            </p>
-        </div>
-        <div class="benefit-section">
-            <h3 data-i18n="cost_management"></h3>
-            <p data-i18n="cost_management_content">
-            </p>
-        </div>
-    </div>
+    <section class="container mx-auto my-10">
+        <h2 class="text-3xl font-bold text-blue-900 text-center">Contact Us</h2>
+        <form action="#" class="mt-8 max-w-lg mx-auto">
+            <div class="mb-4">
+                <input type="text" name="full_name" placeholder="Full Name..." class="w-full p-3 border border-gray-300 rounded">
+            </div>
+            <div class="mb-4">
+                <input type="email" name="email" placeholder="Email Address..." class="w-full p-3 border border-gray-300 rounded">
+            </div>
+            <div class="mb-4">
+                <input type="tel" name="phone_number" placeholder="XXX-XXX-XXXX" class="w-full p-3 border border-gray-300 rounded">
+            </div>
+            <div class="mb-4">
+                <textarea name="comment" placeholder="Type Your Comment..." class="w-full p-3 border border-gray-300 rounded"></textarea>
+            </div>
+            <button type="submit" class="w-full bg-blue-900 text-white py-3 rounded hover:bg-blue-700">Submit</button>
+        </form>
+    </section>
 
-    <footer class="footer">
-        <div class="waves">
-            <div class="wave" id="wave1"></div>
-            <div class="wave" id="wave2"></div>
-            <div class="wave" id="wave3"></div>
-            <div class="wave" id="wave4"></div>
-        </div>
-        <ul class="social-icon">
-            <li class="social-icon__item"><a class="social-icon__link" href="#">
-                    <ion-icon name="logo-facebook"></ion-icon>
-                </a></li>
-            <li class="social-icon__item"><a class="social-icon__link" href="#">
-                    <ion-icon name="logo-twitter"></ion-icon>
-                </a></li>
-            <li class="social-icon__item"><a class="social-icon__link" href="#">
-                    <ion-icon name="logo-linkedin"></ion-icon>
-                </a></li>
-            <li class="social-icon__item"><a class="social-icon__link" href="#">
-                    <ion-icon name="logo-instagram"></ion-icon>
-                </a></li>
+    <footer class="bg-blue-900 text-white text-center py-4 mt-10">
+        <ul class="flex justify-center space-x-4 mb-4">
+            <li><a class="social-icon__link hover:text-white" href="#"><ion-icon name="logo-facebook"></ion-icon></a></li>
+            <li><a class="social-icon__link hover:text-white" href="#"><ion-icon name="logo-twitter"></ion-icon></a></li>
+            <li><a class="social-icon__link hover:text-white" href="#"><ion-icon name="logo-linkedin"></ion-icon></a></li>
+            <li><a class="social-icon__link hover:text-white" href="#"><ion-icon name="logo-instagram"></ion-icon></a></li>
         </ul>
-        <ul class="menu">
-            <li class="menu__item"><a class="menu__link" href="#">Home</a></li>
-            <li class="menu__item"><a class="menu__link" href="#">About</a></li>
-            <li class="menu__item"><a class="menu__link" href="#">Services</a></li>
-            <li class="menu__item"><a class="menu__link" href="#">Team</a></li>
-            <li class="menu__item"><a class="menu__link" href="#">Contact</a></li>
+        <ul class="flex justify-center space-x-4 mb-4">
+            <li><a class="menu__link hover:text-white" href="#">Home</a></li>
+            <li><a class="menu__link hover:text-white" href="#">About</a></li>
+            <li><a class="menu__link hover:text-white" href="#">Services</a></li>
+            <li><a class="menu__link hover:text-white" href="#">Team</a></li>
+            <li><a class="menu__link hover:text-white" href="#">Contact</a></li>
         </ul>
         <p>&copy;2024 RF Dev Solutions | All Rights Reserved</p>
     </footer>
 
-    <!-- Include jQuery -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.js"></script>
+    <script src="https://unpkg.com/flowbite@1.4.7/dist/flowbite.js"></script>
     <script src="https://unpkg.com/i18next@21.6.0/dist/umd/i18next.min.js"></script>
     <script src="https://unpkg.com/i18next-http-backend@1.4.0/i18nextHttpBackend.min.js"></script>
     <script src="https://unpkg.com/jquery-i18next@1.2.1/dist/umd/jquery-i18next.min.js"></script>
     <script>
-        i18next.use(i18nextHttpBackend).init({
-            fallbackLng: 'EN',
-            backend: {
-                loadPath: './locales/{{lng}}/translation.json'
-            },
-            debug: true // Enable debug mode to get more information in console
-        }, function(err, t) {
-            if (err) console.error(err);
-            jqueryI18next.init(i18next, $, {
-                useOptionsAttr: true
+        document.addEventListener('DOMContentLoaded', function () {
+            // Dropdown functionality
+            const dropdownButton = document.getElementById('dropdownDefaultButton');
+            const dropdownMenu = document.getElementById('dropdown');
+    
+            dropdownButton.addEventListener('click', function () {
+                dropdownMenu.classList.toggle('hidden');
             });
-            $(document).localize();
+    
+            // Mobile menu toggle
+            function toggleMobileMenu() {
+                document.getElementById('mobile-menu').classList.toggle('active');
+            }
+    
+            // Carousel functionality from Flowbite
+            const carousel = document.getElementById('default-carousel');
+            const carouselItems = carousel.querySelectorAll('[data-carousel-item]');
+            const prevButton = carousel.querySelector('[data-carousel-prev]');
+            const nextButton = carousel.querySelector('[data-carousel-next]');
+            const indicators = carousel.querySelectorAll('[data-carousel-slide-to]');
+    
+            let currentSlide = 0;
+    
+            function showSlide(index) {
+                carouselItems.forEach((item, i) => {
+                    item.classList.toggle('hidden', i !== index);
+                    indicators[i].classList.toggle('bg-white', i === index);
+                    indicators[i].classList.toggle('bg-gray-400', i !== index);
+                });
+            }
+    
+            prevButton.addEventListener('click', () => {
+                currentSlide = (currentSlide - 1 + carouselItems.length) % carouselItems.length;
+                showSlide(currentSlide);
+            });
+    
+            nextButton.addEventListener('click', () => {
+                currentSlide = (currentSlide + 1) % carouselItems.length;
+                showSlide(currentSlide);
+            });
+    
+            indicators.forEach((indicator, i) => {
+                indicator.addEventListener('click', () => {
+                    currentSlide = i;
+                    showSlide(currentSlide);
+                });
+            });
+    
+            setInterval(() => {
+                nextButton.click();
+            }, 7000); // Change slide every 7 seconds
+    
+            showSlide(currentSlide);
         });
-
+    
+        // Language change functionality
         function changeLanguage(lng) {
-            i18next.changeLanguage(lng, function(err, t) {
+            i18next.changeLanguage(lng, function (err, t) {
                 if (err) console.error(err);
                 $(document).localize();
             });
         }
+    
+        function toggleDropdown() {
+            document.getElementById('dropdown-menu').classList.toggle('hidden');
+        }
+    
+        function toggleMobileMenu() {
+            document.getElementById('mobile-menu').classList.toggle('active');
+        }
     </script>
+    
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 </body>
 
 </html>
+
 
