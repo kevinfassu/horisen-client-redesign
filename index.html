@@ -4,16 +4,54 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Medical Caregivers LLC</title>
+    <title data-i18n="title">Medical Caregivers LLC</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css">
     <link href="https://unpkg.com/flowbite@1.4.7/dist/flowbite.min.css" rel="stylesheet">
+    <style>
+        @media (max-width: 768px) {
+            .mobile-logo {
+                width: 60px; /* Adjusted size for mobile */
+                height: 60px; /* Adjusted size for mobile */
+            }
+
+            .mobile-header-text {
+                font-size: 1.25rem; /* Adjust as necessary */
+            }
+
+            .mobile-dropdown-button {
+                padding: 0.5rem 1rem;
+                font-size: 0.875rem; /* Adjust as necessary */
+            }
+
+            #mobile-menu {
+                display: none;
+                position: fixed;
+                top: 0;
+                right: 0;
+                height: 100%;
+                width: 75%;
+                background-color: #1E3A8A; /* bg-blue-900 */
+                z-index: 50;
+                padding-top: 60px; /* Add some top padding to avoid content overlap with header */
+            }
+
+            #mobile-menu.active {
+                display: block;
+            }
+
+            .carousel-img-mobile {
+                height: 200px; /* Adjust height for mobile view */
+            }
+        }
+    </style>
+    
 </head>
 
 <body class="bg-gray-200 font-serif">
     <header class="bg-white fixed top-0 w-full z-50 shadow">
         <div class="flex items-center justify-between p-4">
-            <button id="dropdownRadioBgHoverButton" data-dropdown-toggle="dropdownRadioBgHover" class="text-gold bg-blue-900 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 " type="button">Language 
+            <button id="dropdownRadioBgHoverButton" data-dropdown-toggle="dropdownRadioBgHover" class="text-gold bg-blue-900 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 mobile-dropdown-button" type="button" data-i18n="language">Language 
                 <svg class="w-2 h-2.5 ms-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
                 </svg>
@@ -22,40 +60,43 @@
             <!-- Dropdown menu -->
             <div id="dropdownRadioBgHover" class="z-10 hidden w-48 bg-white divide-y divide-gray-100 rounded-lg shadow dark:bg-gray-700 dark:divide-gray-600">
                 <ul class="p-3 space-y-1 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownRadioBgHoverButton">
-                    <li>
+                    <li onclick="changeLanguage('en')">
                         <div class="flex items-center p-2 rounded hover:bg-gray-100 dark:hover:bg-gray-600">
-                            <input id="default-radio-4" type="radio" value="" name="default-radio" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
-                            <label for="default-radio-4" class="w-full ms-2 text-sm font-medium text-gray-900 rounded dark:text-gray-300">Default radio</label>
+                            <input id="default-radio-4" type="radio" value="en" name="default-radio" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
+                            <label for="default-radio-4" class="w-full ms-2 text-sm font-medium text-gray-900 rounded dark:text-gray-300" data-i18n="en">EN</label>
+                            <img src="assets/images/EN.jpeg" alt="Small image" class="w-4 h-4 ml-2">
                         </div>
                     </li>
-                    <li>
+                    <li onclick="changeLanguage('es')">
                         <div class="flex items-center p-2 rounded hover:bg-gray-100 dark:hover:bg-gray-600">
-                            <input checked id="default-radio-5" type="radio" value="" name="default-radio" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
-                            <label for="default-radio-5" class="w-full ms-2 text-sm font-medium text-gray-900 rounded dark:text-gray-300">Checked state</label>
+                            <input id="default-radio-5" type="radio" value="es" name="default-radio" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
+                            <label for="default-radio-5" class="w-full ms-2 text-sm font-medium text-gray-900 rounded dark:text-gray-300" data-i18n="es">ES</label>
+                            <img src="assets/images/ES.jpeg" alt="Small image" class="w-4 h-4 ml-2">
                         </div>
                     </li>
-                    <li>
+                    <li onclick="changeLanguage('it')">
                         <div class="flex items-center p-2 rounded hover:bg-gray-100 dark:hover:bg-gray-600">
-                            <input id="default-radio-6" type="radio" value="" name="default-radio" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
-                            <label for="default-radio-6" class="w-full ms-2 text-sm font-medium text-gray-900 rounded dark:text-gray-300">Default radio</label>
+                            <input id="default-radio-6" type="radio" value="it" name="default-radio" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
+                            <label for="default-radio-6" class="w-full ms-2 text-sm font-medium text-gray-900 rounded dark:text-gray-300" data-i18n="it">IT</label>
+                            <img src="assets/images/IT.png" alt="Small image" class="w-4 h-4 ml-2">
                         </div>
                     </li>
                 </ul>
             </div>
             
             <div class="text-center flex-grow">
-                <h1 class="text-6xl font-cursive text-gold">Medical Caregivers LLC</h1>
+                <h1 class="text-6xl font-cursive text-gold mobile-header-text" data-i18n="company_name">Medical Caregivers LLC</h1>
             </div>
             <div>
-                <img src="assets/images/Medical Cargivers Logo.png" alt="Logo" class="w-36 h-auto">
+                <img src="assets/images/Medical Cargivers Logo.png" alt="Logo" class="w-36 h-auto mobile-logo">
             </div>
         </div>
         <nav class="bg-blue-900 text-white hidden md:block">
             <ul class="flex justify-center space-x-4 py-2">
-                <li><a href="#WhyUs" class="hover-button">Why Us</a></li>
-                <li><a href="#Services" class="hover-button">Services</a></li>
-                <li><a href="#Employment" class="hover-button">Employment</a></li>
-                <li><a href="#RequestFreeConsultation" class="hover-button">REQUEST FREE CONSULTATION</a></li>
+                <li><a href="#WhyUs" class="hover-button" data-i18n="why_us">Why Us</a></li>
+                <li><a href="#Services" class="hover-button" data-i18n="services">Services</a></li>
+                <li><a href="#Employment" class="hover-button" data-i18n="employment">Employment</a></li>
+                <li><a href="#RequestFreeConsultation" class="hover-button" data-i18n="request_free_consultation">REQUEST FREE CONSULTATION</a></li>
             </ul>
         </nav>
         
@@ -64,14 +105,13 @@
         </div>
     </header>
     
-
-    <div id="mobile-menu" class="fixed inset-y-0 right-0 bg-blue-900 text-white hidden md:hidden z-50">
+    <div id="mobile-menu" class="fixed inset-y-0 right-0 bg-blue-900 text-white hidden z-50">
         <button onclick="toggleMobileMenu()" class="text-white text-3xl absolute top-4 right-4">&#10005;</button>
         <ul class="flex flex-col items-center space-y-4 py-4 mt-12">
-            <li><a href="#WhyUs" class="hover:text-gold">Why Us</a></li>
-            <li><a href="#Services" class="hover:text-gold">Services</a></li>
-            <li><a href="#Employment" class="hover:text-gold">Employment</a></li>
-            <li><a href="#RequestFreeConsultation" class="hover:text-gold">REQUEST FREE CONSULTATION</a></li>
+            <li><a href="#WhyUs" class="hover:text-gold" data-i18n="why_us">Why Us</a></li>
+            <li><a href="#Services" class="hover:text-gold" data-i18n="services">Services</a></li>
+            <li><a href="#Employment" class="hover:text-gold" data-i18n="employment">Employment</a></li>
+            <li><a href="#RequestFreeConsultation" class="hover:text-gold" data-i18n="request_free_consultation">REQUEST FREE CONSULTATION</a></li>
         </ul>
     </div>
 
@@ -81,15 +121,15 @@
             <div class="relative h-full overflow-hidden rounded-lg">
                 <!-- Item 1 -->
                 <div class="hidden duration-1000 ease-in-out" data-carousel-item>
-                    <img src="assets/images/AdobeStock_830854888_Preview.jpeg" class="absolute block w-full h-full object-cover" alt="Social Media Marketing">
+                    <img src="assets/images/AdobeStock_830854888_Preview.jpeg" class="absolute block w-full object-cover carousel-img-mobile" alt="Social Media Marketing">
                 </div>
                 <!-- Item 2 -->
                 <div class="hidden duration-1000 ease-in-out" data-carousel-item>
-                    <img src="assets/images/AdobeStock_640582926_Preview 2.jpeg" class="absolute block w-full h-full object-cover" alt="Online Reputation Management">
+                    <img src="assets/images/AdobeStock_640582926_Preview 2.jpeg" class="absolute block w-full object-cover carousel-img-mobile" alt="Online Reputation Management">
                 </div>
                 <!-- Item 3 -->
                 <div class="hidden duration-1000 ease-in-out" data-carousel-item>
-                    <img src="assets/images/AdobeStock_738804327_Preview.jpeg" class="absolute block w-full h-full object-cover" alt="Search Engine Optimization">
+                    <img src="assets/images/AdobeStock_738804327_Preview.jpeg" class="absolute block w-full object-cover carousel-img-mobile" alt="Search Engine Optimization">
                 </div>
             </div>
             <!-- Slider indicators -->
@@ -102,7 +142,7 @@
             <button type="button" class="absolute top-0 left-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-prev>
                 <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 group-hover:bg-white/50 group-focus:ring-4 group-focus:ring-white group-focus:outline-none">
                     <svg class="w-4 h-4 text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
-                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 1 1 5l4 4"/>
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 1 1 5l4 4 4-4"/>
                     </svg>
                     <span class="sr-only">Previous</span>
                 </span>
@@ -118,8 +158,8 @@
         </div>
 
         <div class="container mx-auto my-10 text-center">
-            <h2 class="text-3xl font-bold text-blue-900">Mission Statement</h2>
-            <p class="text-lg text-gray-700 mt-4">Our mission is to provide superior healthcare services that include respect and dignity to each individual, nurture the spirit and body, provide memorable experiences, and honor family values. Our patients and their families will want to recommend our services to family and friends, and physicians will refer us to their patients. Our Core Values are COMPASSION, HONOR, and DIGNITY for ALL sacred life.</p>
+            <h2 class="text-3xl font-bold text-blue-900" data-i18n="mission_statement_title">Mission Statement</h2>
+            <p class="text-lg text-gray-700 mt-4" data-i18n="mission_statement">Our mission is to provide superior healthcare services that include respect and dignity to each individual, nurture the spirit and body, provide memorable experiences, and honor family values. Our patients and their families will want to recommend our services to family and friends, and physicians will refer us to their patients. Our Core Values are COMPASSION, HONOR, and DIGNITY for ALL sacred life.</p>
         </div>
     </main>
 
@@ -130,8 +170,8 @@
                     <div class="bg-white shadow-lg rounded overflow-hidden h-full">
                         <img src="assets/images/professional picture.png" alt="Robert Ivan Rodriguez" class="w-full h-41 object-cover">
                         <div class="p-4">
-                            <h3 class="text-xl font-bold text-blue-900">Robert Ivan Rodriguez</h3>
-                            <p class="text-gray-700 mt-2">Our mission is to provide superior healthcare services that include respect and dignity to each individual, nurture the spirit and body, provide memorable experiences, and honor family values.  Our patients and their families will want to recommend our services to family and friends, and physicians will refer us to their patients. Our Core Values are COMPASSION, HONOR, and DIGNITY for ALL sacred life. Medical Caregivers LLC was founded by Robert Ivan Rodriguez, a nurse with specialty in Respiratory Therapy and Physical Rehabilitation. Ivan, as his family and students know him, personally experienced the challenges of healthcare because of his dear mother Sara's ongoing battle with dementia.  Ivan felt that care and compassion are an integral part of treatment.  Inspired to use his experience to help others, Ivan combined his knowledge in healthcare and passion for showing care to individual patients in order to help others navigate through this challenging time. When he is not working, Robert Ivan maintains his fitness through Martial Arts. He is a Martial Arts Instructor who holds black belts in Judo, Kendo, Iaido, Taekwondo WTF, and Kung Fu Southern style. All these disciplines have instilled in Ivan the moral values, integrity, patience, perspective, and respect for all living things.  He applies these values in his approach to clients, needs. At Medical Caregivers LLC, we are constantly asking ourselves how we can do more and make a greater difference in someone's life, and that starts with treating every patient we meet with COMPASSION, HONOR, and DIGNITY.  Let's work together and help patients achieve their goals, as well as providing them lasting memories!</p>
+                            <h3 class="text-xl font-bold text-blue-900" data-i18n="robert_ivan_rodriguez">Robert Ivan Rodriguez</h3>
+                            <p class="text-gray-700 mt-2" data-i18n="robert_ivan_rodriguez_description">Our mission is to provide superior healthcare services that include respect and dignity to each individual, nurture the spirit and body, provide memorable experiences, and honor family values. Medical Caregivers LLC was founded by Robert Ivan Rodriguez, a nurse with specialty in Respiratory Therapy and Physical Rehabilitation...</p>
                         </div>
                     </div>
                 </div>
@@ -139,8 +179,8 @@
                     <div class="bg-white shadow-lg rounded overflow-hidden h-full">
                         <img src="assets/images/AdobeStock_830176793_Preview.jpeg" alt="Online Reputation Management" class="w-full h-48 object-cover">
                         <div class="p-4">
-                            <h3 class="text-xl font-bold text-blue-900">Online Reputation Management</h3>
-                            <p class="text-gray-700 mt-2">The web is full of opinions, and some of these can be negative...</p>
+                            <h3 class="text-xl font-bold text-blue-900" data-i18n="online_reputation_management">Online Reputation Management</h3>
+                            <p class="text-gray-700 mt-2" data-i18n="online_reputation_management_description">The web is full of opinions, and some of these can be negative...</p>
                         </div>
                     </div>
                 </div>
@@ -148,8 +188,8 @@
                     <div class="bg-white shadow-lg rounded overflow-hidden h-full">
                         <img src="assets/images/AdobeStock_628607045_Preview.jpeg" alt="Social Media Marketing" class="w-full h-48 object-cover">
                         <div class="p-4">
-                            <h3 class="text-xl font-bold text-blue-900">Social Media Marketing</h3>
-                            <p class="text-gray-700 mt-2">Social media continues to have a sizable influence on buying habits...</p>
+                            <h3 class="text-xl font-bold text-blue-900" data-i18n="social_media_marketing">Social Media Marketing</h3>
+                            <p class="text-gray-700 mt-2" data-i18n="social_media_marketing_description">Social media continues to have a sizable influence on buying habits...</p>
                         </div>
                     </div>
                 </div>
@@ -157,8 +197,8 @@
                     <div class="bg-white shadow-lg rounded overflow-hidden h-full">
                         <img src="assets/images/AdobeStock_738804327_Preview.jpeg" alt="SEO" class="w-full h-48 object-cover">
                         <div class="p-4">
-                            <h3 class="text-xl font-bold text-blue-900">Search Engine Optimization</h3>
-                            <p class="text-gray-700 mt-2">Search engine optimization helps increase visibility...</p>
+                            <h3 class="text-xl font-bold text-blue-900" data-i18n="seo">Search Engine Optimization</h3>
+                            <p class="text-gray-700 mt-2" data-i18n="seo_description">Search engine optimization helps increase visibility...</p>
                         </div>
                     </div>
                 </div>
@@ -210,21 +250,21 @@
     </section>
 
     <section class="container mx-auto my-10">
-        <h2 class="text-3xl font-bold text-blue-900 text-center">Contact Us</h2>
+        <h2 class="text-3xl font-bold text-blue-900 text-center" data-i18n="contact_us">Contact Us</h2>
         <form action="#" class="mt-8 max-w-lg mx-auto">
             <div class="mb-4">
-                <input type="text" name="full_name" placeholder="Full Name..." class="w-full p-3 border border-gray-300 rounded">
+                <input type="text" name="full_name" placeholder="Full Name..." class="w-full p-3 border border-gray-300 rounded" data-i18n="[placeholder]full_name_placeholder">
             </div>
             <div class="mb-4">
-                <input type="email" name="email" placeholder="Email Address..." class="w-full p-3 border border-gray-300 rounded">
+                <input type="email" name="email" placeholder="Email Address..." class="w-full p-3 border border-gray-300 rounded" data-i18n="[placeholder]email_address_placeholder">
             </div>
             <div class="mb-4">
-                <input type="tel" name="phone_number" placeholder="XXX-XXX-XXXX" class="w-full p-3 border border-gray-300 rounded">
+                <input type="tel" name="phone_number" placeholder="XXX-XXX-XXXX" class="w-full p-3 border border-gray-300 rounded" data-i18n="[placeholder]phone_number_placeholder">
             </div>
             <div class="mb-4">
-                <textarea name="comment" placeholder="Type Your Comment..." class="w-full p-3 border border-gray-300 rounded"></textarea>
+                <textarea name="comment" placeholder="Type Your Comment..." class="w-full p-3 border border-gray-300 rounded" data-i18n="[placeholder]comment_placeholder"></textarea>
             </div>
-            <button type="submit" class="w-full bg-blue-900 text-white py-3 rounded hover:bg-blue-700">Submit</button>
+            <button type="submit" class="w-full bg-blue-900 text-white py-3 rounded hover:bg-blue-700" data-i18n="submit">Submit</button>
         </form>
     </section>
 
@@ -236,13 +276,13 @@
             <li><a class="social-icon__link hover:text-white" href="#"><ion-icon name="logo-instagram"></ion-icon></a></li>
         </ul>
         <ul class="flex justify-center space-x-4 mb-4">
-            <li><a class="menu__link hover:text-white" href="#">Home</a></li>
-            <li><a class="menu__link hover:text-white" href="#">About</a></li>
-            <li><a class="menu__link hover:text-white" href="#">Services</a></li>
-            <li><a class="menu__link hover:text-white" href="#">Team</a></li>
-            <li><a class="menu__link hover:text-white" href="#">Contact</a></li>
+            <li><a class="menu__link hover:text-white" href="#" data-i18n="home">Home</a></li>
+            <li><a class="menu__link hover:text-white" href="#" data-i18n="about">About</a></li>
+            <li><a class="menu__link hover:text-white" href="#" data-i18n="services">Services</a></li>
+            <li><a class="menu__link hover:text-white" href="#" data-i18n="team">Team</a></li>
+            <li><a class="menu__link hover:text-white" href="#" data-i18n="contact">Contact</a></li>
         </ul>
-        <p>&copy;2024 RF Dev Solutions | All Rights Reserved</p>
+        <p>&copy;2024 RF Dev Solutions | <span data-i18n="all_rights_reserved">All Rights Reserved</span></p>
     </footer>
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -253,82 +293,90 @@
     <script src="https://unpkg.com/i18next-http-backend@1.4.0/i18nextHttpBackend.min.js"></script>
     <script src="https://unpkg.com/jquery-i18next@1.2.1/dist/umd/jquery-i18next.min.js"></script>
     <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            // Dropdown functionality
-            const dropdownButton = document.getElementById('dropdownDefaultButton');
-            const dropdownMenu = document.getElementById('dropdown');
-    
-            dropdownButton.addEventListener('click', function () {
-                dropdownMenu.classList.toggle('hidden');
-            });
-    
-            // Mobile menu toggle
-            function toggleMobileMenu() {
-                document.getElementById('mobile-menu').classList.toggle('active');
+        // Initialize i18next
+        i18next.use(i18nextHttpBackend).init({
+            lng: 'en', // initial language
+            fallbackLng: 'en',
+            debug: true,
+            backend: {
+                loadPath: '/locales/{{lng}}/translation.json' // path to translation files
             }
-    
-            // Carousel functionality from Flowbite
-            const carousel = document.getElementById('default-carousel');
-            const carouselItems = carousel.querySelectorAll('[data-carousel-item]');
-            const prevButton = carousel.querySelector('[data-carousel-prev]');
-            const nextButton = carousel.querySelector('[data-carousel-next]');
-            const indicators = carousel.querySelectorAll('[data-carousel-slide-to]');
-    
-            let currentSlide = 0;
-    
-            function showSlide(index) {
-                carouselItems.forEach((item, i) => {
-                    item.classList.toggle('hidden', i !== index);
-                    indicators[i].classList.toggle('bg-white', i === index);
-                    indicators[i].classList.toggle('bg-gray-400', i !== index);
-                });
-            }
-    
-            prevButton.addEventListener('click', () => {
-                currentSlide = (currentSlide - 1 + carouselItems.length) % carouselItems.length;
-                showSlide(currentSlide);
-            });
-    
-            nextButton.addEventListener('click', () => {
-                currentSlide = (currentSlide + 1) % carouselItems.length;
-                showSlide(currentSlide);
-            });
-    
-            indicators.forEach((indicator, i) => {
-                indicator.addEventListener('click', () => {
-                    currentSlide = i;
-                    showSlide(currentSlide);
-                });
-            });
-    
-            setInterval(() => {
-                nextButton.click();
-            }, 7000); // Change slide every 7 seconds
-    
-            showSlide(currentSlide);
+        }, function(err, t) {
+            if (err) console.error(err);
+            jqueryI18next.init(i18next, $, { useOptionsAttr: true });
+            $(document).localize();
         });
     
-        // Language change functionality
+        // Change language function
         function changeLanguage(lng) {
-            i18next.changeLanguage(lng, function (err, t) {
+            i18next.changeLanguage(lng, function(err, t) {
                 if (err) console.error(err);
                 $(document).localize();
             });
         }
     
-        function toggleDropdown() {
-            document.getElementById('dropdown-menu').classList.toggle('hidden');
+        // Dropdown functionality
+        const dropdownButton = document.getElementById('dropdownRadioBgHoverButton');
+        const dropdownMenu = document.getElementById('dropdownRadioBgHover');
+    
+        dropdownButton.addEventListener('click', function() {
+            dropdownMenu.classList.toggle('hidden');
+        });
+    
+        // Mobile menu toggle
+        function toggleMobileMenu() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenu.classList.toggle('hidden');
         }
     
-        function toggleMobileMenu() {
-            document.getElementById('mobile-menu').classList.toggle('active');
+        // Carousel functionality from Flowbite
+        const carousel = document.getElementById('default-carousel');
+        const carouselItems = carousel.querySelectorAll('[data-carousel-item]');
+        const prevButton = carousel.querySelector('[data-carousel-prev]');
+        const nextButton = carousel.querySelector('[data-carousel-next]');
+        const indicators = carousel.querySelectorAll('[data-carousel-slide-to]');
+    
+        let currentSlide = 0;
+    
+        function showSlide(index) {
+            carouselItems.forEach((item, i) => {
+                item.classList.toggle('hidden', i !== index);
+                indicators[i].classList.toggle('bg-white', i === index);
+                indicators[i].classList.toggle('bg-gray-400', i !== index);
+            });
         }
+    
+        prevButton.addEventListener('click', () => {
+            currentSlide = (currentSlide - 1 + carouselItems.length) % carouselItems.length;
+            showSlide(currentSlide);
+        });
+    
+        nextButton.addEventListener('click', () => {
+            currentSlide = (currentSlide + 1) % carouselItems.length;
+            showSlide(currentSlide);
+        });
+    
+        indicators.forEach((indicator, i) => {
+            indicator.addEventListener('click', () => {
+                currentSlide = i;
+                showSlide(currentSlide);
+            });
+        });
+    
+        setInterval(() => {
+            nextButton.click();
+        }, 7000); // Change slide every 7 seconds
+    
+        showSlide(currentSlide);
     </script>
     
+    
+
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 </body>
 
 </html>
+
 
 
