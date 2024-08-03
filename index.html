@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <link href="https://unpkg.com/flowbite@1.4.7/dist/flowbite.min.css" rel="stylesheet">
     <style>
-         @media (max-width: 768px) {
+        @media (max-width: 768px) {
             .mobile-logo {
                 width: 60px; /* Adjusted size for mobile */
                 height: 60px; /* Adjusted size for mobile */
@@ -22,8 +22,6 @@
             .mobile-dropdown-button {
                 padding: 0.5rem 1rem;
                 font-size: 0.875rem; /* Adjust as necessary */
-                background-color: white;
-                color: #1E3A8A; /* text-blue-900 */
             }
 
             #mobile-menu {
@@ -46,23 +44,14 @@
                 height: 200px; /* Adjust height for mobile view */
             }
         }
-
-        .header-bg {
-            background-color: #1E3A8A; /* bg-blue-900 */
-        }
-
-        .language-button {
-            background-color: white;
-            color: #1E3A8A; /* text-blue-900 */
-        }
     </style>
     
 </head>
 
 <body class="bg-gray-200 font-serif">
-    <header class="header-bg fixed top-0 w-full z-50 shadow">
+    <header class="bg-white fixed top-0 w-full z-50 shadow">
         <div class="flex items-center justify-between p-4">
-            <button id="dropdownRadioBgHoverButton" data-dropdown-toggle="dropdownRadioBgHover" class="language-button hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:hover:bg-blue-700 dark:focus:ring-blue-800 mobile-dropdown-button" type="button" data-i18n="language">Language 
+            <button id="dropdownRadioBgHoverButton" data-dropdown-toggle="dropdownRadioBgHover" class="text-gold bg-blue-900 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 mobile-dropdown-button" type="button" data-i18n="language">Language 
                 <svg class="w-2 h-2.5 ms-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
                 </svg>
@@ -112,7 +101,7 @@
         </nav>
         
         <div class="block md:hidden">
-            <button onclick="toggleMobileMenu()" class="text-white text-3xl">&#9776;</button>
+            <button onclick="toggleMobileMenu()" class="text-blue-900 text-3xl">&#9776;</button>
         </div>
     </header>
     
