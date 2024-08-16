@@ -54,6 +54,10 @@
         html {
             scroll-behavior: smooth;
         }
+
+        [data-carousel-item] {
+            transition: transform 3s ease-in-out;
+        }
     </style>
     
 </head>
@@ -130,28 +134,28 @@
             <!-- Carousel wrapper -->
             <div class="relative h-full overflow-hidden rounded-lg">
                 <!-- Item 1 -->
-                <div class="hidden duration-1000 ease-in-out" data-carousel-item>
+                <div class="hidden" data-carousel-item>
                     <img src="assets/images/AdobeStock_830854888_Preview.jpeg" class="absolute block w-full object-cover carousel-img-mobile" alt="Social Media Marketing">
                 </div>
                 <!-- Item 2 -->
-                <div class="hidden duration-1000 ease-in-out" data-carousel-item>
-                    <img src="assets/images/AdobeStock_640582926_Preview 2.jpeg" class="absolute block w-full object-cover carousel-img-mobile" alt="Online Reputation Management">
+                <div class="hidden" data-carousel-item>
+                    <img src="assets/images/IMG_0030.jpg" class="absolute block w-full object-cover carousel-img-mobile" alt="Online Reputation Management">
                 </div>
                 <!-- Item 3 -->
-                <div class="hidden duration-1000 ease-in-out" data-carousel-item>
-                    <img src="assets/images/AdobeStock_738804327_Preview.jpeg" class="absolute block w-full object-cover carousel-img-mobile" alt="Search Engine Optimization">
+                <div class="hidden" data-carousel-item>
+                    <img src="assets/images/IMG_0026.jpg" class="absolute block w-full object-cover carousel-img-mobile" alt="Search Engine Optimization">
                 </div>
                 <!-- Item 4 -->
-                <div class="hidden duration-1000 ease-in-out" data-carousel-item>
-                    <img src="assets/images/IMG_0014.jpeg" class="absolute block w-full object-cover carousel-img-mobile" alt="IMG_0014">
+                <div class="hidden" data-carousel-item>
+                    <img src="assets/images/IMG_0021.jpg" class="absolute block w-full object-cover carousel-img-mobile" alt="IMG_0014">
                 </div>
                 <!-- Item 5 -->
-                <div class="hidden duration-1000 ease-in-out" data-carousel-item>
+                <div class="hidden" data-carousel-item>
                     <img src="assets/images/IMG_0016.jpeg" class="absolute block w-full object-cover carousel-img-mobile" alt="IMG_0016">
                 </div>
                 <!-- Item 6 -->
-                <div class="hidden duration-1000 ease-in-out" data-carousel-item>
-                    <img src="assets/images/IMG_0017.jpeg" class="absolute block w-full object-cover carousel-img-mobile" alt="IMG_0017">
+                <div class="hidden" data-carousel-item>
+                    <img src="assets/images/IMG_0023.jpg" class="absolute block w-full object-cover carousel-img-mobile" alt="IMG_0017">
                 </div>
             </div>
             <!-- Slider indicators -->
@@ -391,6 +395,7 @@
         const indicators = carousel.querySelectorAll('[data-carousel-slide-to]');
     
         let currentSlide = 0;
+        const pauseTime = 5000;
     
         function showSlide(index) {
             carouselItems.forEach((item, i) => {
@@ -399,6 +404,18 @@
                 indicators[i].classList.toggle('bg-gray-400', i !== index);
             });
         }
+
+        function nextSlide() {
+        currentSlide = (currentSlide + 1) % carouselItems.length;
+        showSlide(currentSlide);
+    }
+
+    function startCarousel() {
+        setTimeout(function cycle() {
+            nextSlide();
+            setTimeout(cycle, pauseTime);
+        }, pauseTime);
+    }
     
         prevButton.addEventListener('click', () => {
             currentSlide = (currentSlide - 1 + carouselItems.length) % carouselItems.length;
@@ -419,7 +436,7 @@
     
         setInterval(() => {
             nextButton.click();
-        }, 7000); // Change slide every 7 seconds
+        }, slideInterval); // Change slide every 7 seconds
     
         showSlide(currentSlide);
     </script>
